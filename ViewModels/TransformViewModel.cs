@@ -69,14 +69,14 @@
 
         protected override void OnPanning(MR.Gestures.PanEventArgs e)
         {
-            base.OnPanning(e);
+            //base.OnPanning(e);
 
             TranslationX += e.DeltaDistance.X;
             TranslationY += e.DeltaDistance.Y;
         }
         protected override void OnPinching(MR.Gestures.PinchEventArgs e)
         {
-            base.OnPinching(e);
+            //base.OnPinching(e);
 
             SetAnchor(e.Center);
             var newScale = Scale * e.DeltaScale;
@@ -89,7 +89,7 @@
 
         protected override void OnRotating(MR.Gestures.RotateEventArgs e)
         {
-            base.OnRotating(e);
+            //base.OnRotating(e);
 
             SetAnchor(e.Center);
             Rotation += e.DeltaAngle;
