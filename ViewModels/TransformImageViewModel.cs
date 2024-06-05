@@ -102,29 +102,29 @@ namespace ImageZoom.ViewModels
 
         protected override void OnPinching(PinchEventArgs e)
         {
-            base.OnPinching(e);
- //           ImageScale = e.TotalScale;
+            //            base.OnPinching(e);
+            ImageScale = e.TotalScale;
         }
 
         protected override void OnPanning(PanEventArgs e)
         {
-            base.OnPanning(e);
+            //            base.OnPanning(e);
 
-            //double newTranslationX = ImageTranslationX + e.DeltaDistance.X;
-            //double newTranslationY = ImageTranslationY + e.DeltaDistance.Y;
+            double newTranslationX = ImageTranslationX + e.DeltaDistance.X;
+            double newTranslationY = ImageTranslationY + e.DeltaDistance.Y;
 
-            //// Apply constraints to allow panning up to 80% off the screen
-            //double maxTranslationX = (ImageWidth * ImageScale - ImageWidth) * 0.8;
-            //double maxTranslationY = (ImageHeight * ImageScale - ImageHeight) * 0.8;
+            // Apply constraints to allow panning up to 80% off the screen
+            double maxTranslationX = (ImageWidth * ImageScale - ImageWidth) * 0.8;
+            double maxTranslationY = (ImageHeight * ImageScale - ImageHeight) * 0.8;
 
-            //Console.WriteLine($"ImageWidth: {ImageWidth}, ImageHeight: {ImageHeight}, ImageScale: {ImageScale}");
-            //Console.WriteLine($"maxTranslationX: {maxTranslationX}, maxTranslationY: {maxTranslationY}");
-            //Console.WriteLine($"Before Constraint: newTranslationX={newTranslationX}, newTranslationY={newTranslationY}");
+            Console.WriteLine($"ImageWidth: {ImageWidth}, ImageHeight: {ImageHeight}, ImageScale: {ImageScale}");
+            Console.WriteLine($"maxTranslationX: {maxTranslationX}, maxTranslationY: {maxTranslationY}");
+            Console.WriteLine($"Before Constraint: newTranslationX={newTranslationX}, newTranslationY={newTranslationY}");
 
-            //ImageTranslationX = Math.Max(-maxTranslationX, Math.Min(maxTranslationX, newTranslationX));
-            //ImageTranslationY = Math.Max(-maxTranslationY, Math.Min(maxTranslationY, newTranslationY));
+            ImageTranslationX = Math.Max(-maxTranslationX, Math.Min(maxTranslationX, newTranslationX));
+            ImageTranslationY = Math.Max(-maxTranslationY, Math.Min(maxTranslationY, newTranslationY));
 
-            //Console.WriteLine($"After Constraint: ImageTranslationX={ImageTranslationX}, ImageTranslationY={ImageTranslationY}");
+            Console.WriteLine($"After Constraint: ImageTranslationX={ImageTranslationX}, ImageTranslationY={ImageTranslationY}");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
