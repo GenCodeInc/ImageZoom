@@ -8,10 +8,14 @@
             Padding="30,0"
             Spacing="25">
             <Button
-                x:Name="CounterBtn"
-                Text="Zoom Image Test" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+                x:Name="TestImageXaml"
+                Text="Test: ImageXaml" 
+                Clicked="OnTestImageXamlClicked"
+                HorizontalOptions="Fill" />
+            <Button
+                x:Name="TestContentPageXaml"
+                Text="Test: ContentPageXaml" 
+                Clicked="OnTestContentPageXamlClicked"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>

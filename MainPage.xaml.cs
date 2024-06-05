@@ -1,4 +1,6 @@
 ﻿
+//using ImageView.Views;
+using ImageZoom.ViewModels;
 using ImageZoom.Views;
 
 namespace ImageZoom
@@ -9,10 +11,17 @@ namespace ImageZoom
         {
             InitializeComponent();
         }
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void OnTestImageXamlClicked(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new ImageXaml());
 
         }
+        private void OnTestContentPageXamlClicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new ContentPageXaml());
+
+        }
+
+
     }
 }
